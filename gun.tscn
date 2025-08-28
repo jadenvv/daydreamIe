@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://yd43v23adm0i"]
+
+[ext_resource type="Script" uid="uid://cymusc1an86ul" path="res://gun.gd" id="1_18bsf"]
+[ext_resource type="Texture2D" uid="uid://drhbbjdhsex5e" path="res://images/art_atlas.png" id="2_eo51s"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_18bsf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.98504, 1.012)
+texture = ExtResource("2_eo51s")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="shootingPos" type="Marker2D" parent="Sprite2D"]
+position = Vector2(6, -2)
+scale = Vector2(0.996168, 1)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

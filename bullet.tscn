@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://comdi6wk6sot1"]
+
+[ext_resource type="Texture2D" uid="uid://drhbbjdhsex5e" path="res://images/art_atlas.png" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://dwcnvgp7e38n0" path="res://bullet.gd" id="2_v8qja"]
+
+[node name="bullet" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.992947, 1)
+texture = ExtResource("1_v7oki")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("2_v8qja")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-4, 0)
+target_position = Vector2(8, 0)
+hit_from_inside = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+texture = ExtResource("1_v7oki")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true

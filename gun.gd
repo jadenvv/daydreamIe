@@ -14,6 +14,8 @@ func _physics_process(delta: float) -> void:
 func _shoot():
 	var new_bullet = bullet_scene.instantiate()
 	new_bullet.global_position = shootingPos.global_position
-	get_parent().add_child(new_bullet)
+	new_bullet.global_rotation = shootingPos.global_rotation
+	new_bullet.get_node("Sprite2D").scale = Vector2(5,5)
+	get_tree().current_scene.add_child(new_bullet)
 func _on_timer_timeout() -> void:
 	can_shoot = true  # Replace with function body.

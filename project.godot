@@ -11,12 +11,21 @@ config_version=5
 [application]
 
 config/name="daydream"
-run/main_scene="uid://dnnka5th1gldj"
+run/main_scene="uid://dnvgmk7ypgb0h"
 config/features=PackedStringArray("4.4", "Mobile")
+
+[autoload]
+
+Score="*res://Score.gd"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+character="character group"
+enemy=""
 
 [input]
 
